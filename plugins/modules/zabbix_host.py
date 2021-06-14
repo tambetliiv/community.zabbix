@@ -592,6 +592,7 @@ class Host(ZabbixBase):
         if len(host_list) < 1:
             self._module.fail_json(msg="Host not found: %s" % host_name)
         else:
+            host_list[0]['inventory_mode'] = 0
             return host_list[0]
 
     # get proxyid by proxy name
